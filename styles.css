@@ -1,0 +1,120 @@
+/* Beautiful Background */
+body {
+    background: linear-gradient(135deg, #ff66b2, #cc33ff, #ff6699, #9966ff);
+    background-size: 400% 400%;
+    animation: gradientMove 10s infinite alternate;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cursive', sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Header Styling */
+header {
+    color: white;
+    padding: 20px;
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.9);
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 55px;
+    font-weight: bold;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 15px #ff66b2, 0 0 25px #ff33a1; }
+    100% { text-shadow: 0 0 25px #ff99cc, 0 0 35px #ff66b2; }
+}
+
+/* Image Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 250px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.7);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 20px rgba(255, 105, 180, 1);
+}
+
+/* Footer */
+footer {
+    font-size: 22px;
+    padding: 20px;
+    color: white;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+}
+
+/* Heart Rain Effect */
+.heart-rain {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+@keyframes heartFall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Floating Hearts */
+.heart-rain::before,
+.heart-rain::after {
+    content: "💖";
+    position: absolute;
+    font-size: 30px;
+    animation: heartFall 5s infinite linear;
+}
+
+.heart-rain::before {
+    left: 30%;
+    animation-duration: 4s;
+}
+
+.heart-rain::after {
+    left: 60%;
+    animation-duration: 6s;
+}
+
+/* Heart Balloons */
+.heart-balloon {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    font-size: 50px;
+    animation: balloonFloat 5s infinite ease-in-out;
+}
+
+@keyframes balloonFloat {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+}
+
+/* Background Gradient Animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
